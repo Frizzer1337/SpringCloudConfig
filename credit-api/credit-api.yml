@@ -1,0 +1,42 @@
+spring:
+  r2dbc:
+    url: r2dbc:mysql://localhost:3306/db?useSSL=false
+    username: user
+    password: user
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: credit-api
+        instance-id: credit-api
+kafka:
+  bootstrap: localhost:9092
+  topic:
+    payed: CREDIT_PAYED
+    check: CREDIT_CHECK
+credit:
+  penalty:
+    amount: 50
+    warn: 0.3
+    collector: 0.5
+    days: 1
+  rate:
+    auto: 120
+    human: 100
+  modifier:
+    salary: 10
+    creditBalance: 0.2
+    socialCredit: 1.5
+logging:
+  level:
+    org:
+      springframework:
+        transaction:
+          interceptor: TRACE
+        r2dbc: DEBUG
+server:
+  port: 7003
