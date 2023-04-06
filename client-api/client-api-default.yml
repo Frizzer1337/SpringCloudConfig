@@ -1,16 +1,14 @@
 spring:
   r2dbc:
-    url: r2dbc:mysql://db:3306/db?useSSL=false
+    url: r2dbc:mysql://localhost:3306/db?useSSL=false
     username: user
     password: user
   kafka:
     consumer:
       auto-offset-reset: earliest
   cloud:
-    config:
-      enabled: false
     consul:
-      host: consul-server1
+      host: localhost
       port: 8500
       discovery:
         service-name: client-api
