@@ -10,7 +10,7 @@ spring:
     config:
       enabled: false
     consul:
-      host: consul-server1
+      host: localhost
       port: 8500
       discovery:
         service-name: client-api
