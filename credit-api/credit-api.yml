@@ -3,18 +3,21 @@ spring:
     url: r2dbc:mysql://localhost:3306/db?useSSL=false
     username: user
     password: user
-  kafka:
-    consumer:
-      auto-offset-reset: earliest
+    kafka:
+      consumer:
+        auto-offset-reset: earliest
   cloud:
     consul:
-      host: localhost
+      host: consul-server1
       port: 8500
       discovery:
         service-name: credit-api
         instance-id: credit-api
+      enabled: false
+    config:
+      enabled: false
 kafka:
-  bootstrap: localhost:9092
+  bootstrap: http://localhost:9092
   topic:
     payed: CREDIT_PAYED
     check: CREDIT_CHECK
@@ -31,6 +34,8 @@ credit:
     salary: 10
     creditBalance: 0.2
     socialCredit: 1.5
+logger:
+  default: com.frizzer.logger
 logging:
   level:
     org:
@@ -40,3 +45,7 @@ logging:
         r2dbc: DEBUG
 server:
   port: 7003
+reactive-feign:
+  client:
+    client-api:
+      url: http://localhost:7000/client
