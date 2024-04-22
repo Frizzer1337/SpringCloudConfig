@@ -47,4 +47,4 @@ server:
 reactive-feign:
   client:
     client-api:
-      url: http://localhost:7000/client
+      url: http://localhost:8000/client
