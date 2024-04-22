@@ -3,14 +3,18 @@ spring:
     consumer:
       auto-offset-reset: earliest
   cloud:
+    config:
+      enabled: false
     consul:
       host: localhost
       port: 8500
       discovery:
         service-name: notification-api
         instance-id: notification-api
+logger:
+  default: com.frizzer.logger
 kafka:
-  bootstrap: localhost:9092
+  bootstrap: http://localhost:9092
   group:
     id: creditConsumers
   topic:
@@ -18,5 +22,5 @@ kafka:
     payed: CREDIT_PAYED
     payment: CREDIT_PAYMENT
 server:
-  port: 7001
+  port: 7002
 
