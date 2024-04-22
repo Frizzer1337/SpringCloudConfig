@@ -13,7 +13,6 @@ spring:
       discovery:
         service-name: credit-api
         instance-id: credit-api
-      enabled: false
     config:
       enabled: false
 kafka:
