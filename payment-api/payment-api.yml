@@ -33,5 +33,7 @@ reactive-feign:
   client:
     credit-api:
       url: http://localhost:8000/credit
+    client-api:
+      url: http://localhost:8000/client
 
 
